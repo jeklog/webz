@@ -3,7 +3,7 @@ email:             admin@seoleal.com
 description:       Become Viral!
 author:            Adam
 baseurl:           ""
-url:               "seoleal.com"
+url:               "http://seoleal.com"
 
 # Social Profiles
 twitter_username:  SBootstrap
