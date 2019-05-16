@@ -13,14 +13,15 @@ background: '/img/bg-about.jpg'
     <div id="#{{ category_name | slugize }}"></div>
     <p></p>
 
-    <h2 class="category-head">{{ category_name }}</h2>
+    <h1 class="category-head">{{ category_name }}</h1>
     <a name="{{ category_name | slugize }}"></a>
     {% for post in site.categories[category_name] %}
-    <article class="archive-item">
-      <p><strong><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></strong></p>
-      <p>{{ post.subtitle }}</p>
-      <br>
-    </article>
+    <div class="card">
+      <div class="container">
+        <h4><strong><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></strong></h4>
+        <p>{{ post.subtitle }}</p>
+      </div>
+    </div>
     <br>
     {% endfor %}
   </div>
