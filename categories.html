@@ -18,7 +18,7 @@ background: '/img/bg-about.jpg'
     {% for post in site.categories[category_name] %}
     <article class="archive-item">
       <p><strong><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></strong></p>
-      <p>{{ post.description }}</p>
+      {{post | inspect}}
       <br>
     </article>
     <br>
