@@ -19,7 +19,7 @@ background: '/img/bg-about.jpg'
     <div class="card">
       <a href="{{ site.baseurl }}{{ post.url }}" class="container">
         <h4><strong>{{post.title}}</strong></h4>
-        <p>{{ post.subtitle }}</p>
+        <p><strong>{{ post.subtitle }}</strong></p>
         <p>{{ post.excerpt | strip_html | truncatewords: 60 }}</p>
       </a>
     </div>
