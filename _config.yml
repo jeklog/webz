@@ -20,3 +20,5 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-target-blank
+
+include: ['_categories']
