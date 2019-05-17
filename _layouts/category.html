@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+{% if category.background %}
+<header class="masthead"
+    style="background-image: url('{{ category.background | prepend: site.baseurl | replace: '//', '/' }}')">
+    {% else %}
+    <header class="masthead">
+        {% endif %}
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                        <h1>{{ category.title }}</h1>
+                        {% if category.description %}
+                        <span class="subheading">{{ category.description }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {% for post in site.categories[category.name] %}
+                <div class="card">
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="container">
+                        <h4><strong>{{post.title}}</strong></h4>
+                        <p><strong>{{ post.subtitle }}</strong></p>
+                        <p>{{ post.excerpt | strip_html | truncatewords: 60 }}</p>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
