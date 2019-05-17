@@ -26,7 +26,7 @@ layout: default
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <h2>Category Name {{ category.food }} {{ page.food }} {{ page.name }}</h2>
+                <h2>Category Name {{ category.food }} Page Food: {{ page.food }} Page Name: {{ page.name }}</h2>
                 {% for post in site.categories[category.name] %}
                 <div class="card">
                     <a href="{{ site.baseurl }}{{ post.url }}" class="container">
