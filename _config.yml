@@ -22,3 +22,4 @@ plugins:
   - jekyll-target-blank
 
 include: ['_categories']
+permalink: /:year/:month/:day/:title.html
