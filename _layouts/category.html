@@ -27,6 +27,7 @@ layout: default
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <h2>{{page.category_name}} Posts</h2>
+                {% if site.categories[page.category_name] %}
                 {% for post in site.categories[page.category_name] %}
                 <div class="card">
                     <a href="{{ site.baseurl }}{{ post.url }}" class="container">
@@ -36,6 +37,10 @@ layout: default
                     </a>
                 </div>
                 {% endfor %}
+                {% else %}
+                <h2>No posts for this category. If you have something in mind, check <a href="/write">Write For Us</a>
+                    page.</h2>
+                {% endif %}
 
             </div>
         </div>
