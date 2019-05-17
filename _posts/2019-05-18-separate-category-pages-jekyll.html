@@ -1,0 +1,105 @@
+---
+layout: post
+comments: true
+title: "How to create separate category pages in Jekyll Blog"
+subtitle: "Allow users to discover your blog more"
+date: 2019-05-06 23:55:13 -0400
+background: '/img/posts/books.jpg'
+category: Blogging Technology
+---
+
+<p>One of the few reasons our blog takes very small time to load is because it is a static blog. Static blog means there
+    is no interaction with the database or any other thing which takes time to load.</p>
+
+<p>We use a pretty simple stack for delivering these simple to your computer or phone screen. Let's dive into the
+    process in which we created this blog. There is an interesting story behind that. So stay with us before we start
+    with the real problem in the hand.</p>
+
+<p>First of all we found a domain on namecheap. We used some tools to find out that Page Rank and Domain Authority is
+    good for the page. We went to NameCheap and brought in no time.</p>
+
+<p>Then we created a new Repository for the blog on GitHub. Our aim was clear, we wanted the blog on GitHub Pages.</p>
+
+<p>We forked the clean blog repo and deleted the old posts on the blog, pushed the code.</p>
+
+<p>Finally, we had to setup the DNS and CNAME configurations. This step took some time. Anyway our new blog was ready
+    with custom domain in no time.</p>
+
+<p>Now that we have discussed on how we got started, Let's discuss the problem we are facing currently.</p>
+
+<h2>The Problem</h2>
+
+<p>Its fairly easy to define categories in a Jekyll blog post. We have to write category/ categories in the frontmatter
+    of the post. This is the frontmatter of the post that you are reading.</p>
+
+<pre><code>
+---
+layout: post
+comments: true
+title: "How to create separate category pages in Jekyll Blog"
+subtitle: "Allow users to discover your blog more"
+date: 2019-05-06 23:55:13 -0400
+background: '/img/posts/books.jpg'
+category: Blogging Technology
+---
+</code></pre>
+
+<p>Sweet, right.</p>
+
+<p>But if you go to our home page, you will find that we have found some very appealing topics about which we write
+    regularly.</p>
+
+<p>For each of them we have created a separate page. It was a hard task, but we agreed that it is one time task and we
+    can invest some time in it.</p>
+
+<p>We wanted the process to be as easy as possible. We found that Jekyll currently doesn't provide any pluggable way of
+    doing this. So, we went forward with the following approach.</p>
+
+<p>We created a simple html file in the <kbd>_layouts</kbd> directory called <kbd>category.html</kbd>. Following was the
+    content of the file.</p>
+
+<script src="https://gist.github.com/jeklog/8ed69044fbc552431feb94a0ccac9acb.js"></script>
+
+<p>I hope you are getting what are we trying to do. We are trying to create a custom layout. Which can then be directly
+    used to create category pages.</p>
+
+<p>All other code is used to display page stuff. The Real thing starts from <kbd>Line 29</kbd>. Here we create a header
+    of the <kbd>category_name</kbd>, which will be passed when we will create a category page.</p>
+
+<p>Then on <kbd>Line 31</kbd>, We are only getting the posts with the same category name.</p>
+
+<p>Finally, if we didn't find any post, then we will display some content.</p>
+
+<p>Now we will create separate category pages.</p>
+
+<p>We try to write as much clean code as possible. For that reason, we created a directory that will contain all the
+    category pages.</p>
+
+<p>So, if you want Jekyll to discover files in the new directories, you have to add the following content to
+    <kbd>_config.yml</kbd>.</p>
+
+<pre><code>
+include: ['_categories']
+</code></pre>
+
+<p>Finally, you can create the category pages. Let's see the content of Technology page.</p>
+
+<pre><code>
+---
+layout: category
+title: Technology
+description: For automating the boring tasks.
+background: '/img/posts/printer.jpg'
+permalink: /technology/
+category_name: Technology
+---
+</code></pre>
+
+<p>So only thing that you have to write is the frontmatter of the file and you are done.</p>
+
+<p>Now whenever you write a new post, you will not have to add it to a page. Your posts will automatically be present at
+    all the places according to the <kbd>category_name</kbd></p>
+
+<p>Just don't mess the <kbd>category_name</kbd></p>
+
+<p>Hope you liked the way we tackled the problem. Please share your views as well.</p>
