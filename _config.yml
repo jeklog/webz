@@ -1,14 +1,14 @@
-title:             Loyal SEO
-email:             admin@seoleal.com
-description:       Figure out how to develop your traffic, improve your site. Best how-tos for the SEO.
+title:             Webz Website
+email:             all@webz.website
+description:       Get your Daily digest of important products
 author:            Adam Leal
 baseurl:           ""
-url:               "https://seoleal.com"
+url:               "http://read.webz.website"
 
 # Social Profiles
 twitter_username:
 github_username:
-facebook_username: loyalseo
+facebook_username: seoleal
 
 # Build settings
 markdown:          kramdown
