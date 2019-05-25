@@ -2,8 +2,8 @@ title:             Webz Website
 email:             all@webz.website
 description:       Get your Daily digest of important products
 author:            Adam Leal
-baseurl:           ""
-url:               "http://jeklog.github.io/webz"
+baseurl:           "webz"
+url:               "http://jeklog.github.io"
 
 # Social Profiles
 twitter_username:
